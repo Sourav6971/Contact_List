@@ -44,13 +44,20 @@ const App = () => {
         updateContact={openEditModal}
         updateCallback={onUpdate}
       />
-      <button onClick={openCreateModal}>Create new Contact</button>
+      <button
+        onClick={openCreateModal}
+        className="bg-green-700 text-white p-4 m-4 rounded-md text-xl"
+      >
+        Create new Contact
+      </button>
       {isModalOpen && (
         <div className="modal">
-          <div className="modal-content">
-            <span className="close" onClick={closeModal}>
-              &times;
-            </span>
+          <div className="modal-content flex flex-col">
+            <div className="flex justify-end">
+              <span className="close" onClick={closeModal}>
+                &times;
+              </span>
+            </div>
             <ContactForm
               existingContact={currentContact}
               updateCallback={onUpdate}

@@ -22,25 +22,35 @@ const ContactList = ({ contacts, updateCallback, updateContact }) => {
 
   return (
     <div>
-      <h2>Contacts</h2>
+      <h2 className="text-2xl font-serif px-12 m-4 font-bold">Contacts</h2>
       <table>
         <thead>
           <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>Actions</th>
+            <th className="p-4">First Name</th>
+            <th className="p-4">Last Name</th>
+            <th className="p-4">Email</th>
+            <th className="p-4">Actions</th>
           </tr>
         </thead>
         <tbody>
           {contacts.map((contact) => (
             <tr key={contact.id}>
-              <td>{contact.firstName}</td>
-              <td>{contact.lastName}</td>
-              <td>{contact.email}</td>
-              <td>
-                <button onClick={() => updateContact(contact)}>Update</button>
-                <button onClick={() => onDelete(contact.id)}>Delete</button>
+              <td className="py-1 px-4">{contact.firstName}</td>
+              <td className="py-1 px-4">{contact.lastName}</td>
+              <td className="py-1 px-4">{contact.email}</td>
+              <td className="py-1 px-4">
+                <button
+                  className="bg-blue-400 text-white m-4 px-2 py-1 rounded-md hover:bg-blue-500"
+                  onClick={() => updateContact(contact)}
+                >
+                  Update
+                </button>
+                <button
+                  className="bg-red-500 text-white m-4 px-2 py-1 rounded-md hover:bg-red-600"
+                  onClick={() => onDelete(contact.id)}
+                >
+                  Delete
+                </button>
               </td>
             </tr>
           ))}

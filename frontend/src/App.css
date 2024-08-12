@@ -9,15 +9,17 @@
   background-color: rgba(0, 0, 0, 0.4);
 }
 .modal-content {
-  background-color: #fefefe;
+  background-color: #ffffff;
   margin: 10%auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  border-radius: 2%;
+  width: 50%;
 }
 .close {
-  color: #aaa;
+  color: #000000;
   float: right;
   font-size: 28px;
   font-weight: bold;
+  cursor: pointer;
 }

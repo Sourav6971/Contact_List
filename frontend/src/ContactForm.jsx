@@ -37,42 +37,56 @@ const ContactForm = ({ existingContact = {}, updateCallback }) => {
 
   return (
     <form onSubmit={onSubmit}>
-      <div>
-        <label htmlFor="firstName">First Name:</label>
+      <div className="pb-2">
+        <label htmlFor="firstName" className="font-mono text-bold text-2xl m-4">
+          First Name:
+        </label>
         <input
           id="firstName"
           type="text"
           value={firstName}
+          className="border rounded-md border-gray-400 w-96 p-2 font-mono"
           onChange={(e) => {
             setFirstName(e.target.value);
           }}
         ></input>
       </div>
-      <div>
-        <label htmlFor="lastName">Last Name:</label>
+      <div className="pb-2">
+        <label htmlFor="lastName" className="font-mono text-bold text-2xl m-4">
+          Last Name:
+        </label>
         <input
           id="lastName"
           type="text"
           value={lastName}
+          className="border border-gray-400 p-2 w-96 rounded-md font-mono ml-3"
           onChange={(e) => {
             setLastName(e.target.value);
           }}
         ></input>
       </div>
-      <div>
-        <label htmlFor="email">Email:</label>
+      <div className="pb-2">
+        <label htmlFor="email" className="font-mono text-bold text-2xl m-4">
+          Email:
+        </label>
         <input
           id="email"
           type="email"
           value={email}
+          className="border border-gray-400 w-96 p-2 rounded-md font-mono ml-16 mb-2"
           onChange={(e) => {
             setEmail(e.target.value);
           }}
         ></input>
       </div>
-      <button type="submit">
-        {updating ? "Update Contact" : "Create Contact"}
-      </button>
+      <div className="flex justify-center">
+        <button
+          type="submit"
+          className="bg-blue-600 p-4 text-white rounded-md text-xl hover:bg-blue-700 m-4"
+        >
+          {updating ? "Update Contact" : "Create Contact"}
+        </button>
+      </div>
     </form>
   );
 };
